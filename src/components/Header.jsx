@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, Phone, Mail, MapPin, User } from 'lucide-react';
+import logoImage from '../logo.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ const Header = () => {
           <div className="flex items-center">
             <div className="w-16 h-16 rounded-lg flex items-center justify-center mr-3 overflow-hidden">
               <img 
-                src="/src/logo.jpg" 
+                src={logoImage} 
                 alt="Matha Foundation Logo" 
                 className="w-full h-full object-cover"
               />

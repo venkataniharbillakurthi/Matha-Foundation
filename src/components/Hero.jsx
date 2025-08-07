@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import EnquiryModal from './EnquiryModal';
+import heroImage from '../home_screen.jpg';
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,7 +38,7 @@ const Hero = () => {
           <div className="relative animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <div className="relative z-10 bg-white rounded-2xl p-4 shadow-xl">
               <img
-                src="/src/home_screen.jpg"
+                src={heroImage}
                 alt="Elderly care at Matha Foundation"
                 className="w-full h-96 object-cover rounded-lg"
               />
