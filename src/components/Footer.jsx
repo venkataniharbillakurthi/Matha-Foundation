@@ -1,5 +1,5 @@
 import { Phone, MapPin, Heart } from 'lucide-react';
-
+import banner from '../banner.jpg';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -12,7 +12,7 @@ const Footer = () => {
             <div>
               <div className="mb-4">
                 <img 
-                  src="/src/bannerforfooter.jpg" 
+                  src={banner} 
                   alt="Matha Foundation Logo" 
                   className="h-16 w-auto object-contain"
                 />
