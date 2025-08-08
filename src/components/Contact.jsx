@@ -4,9 +4,7 @@ import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    subject: '',
     message: ''
   });
 
@@ -29,10 +27,8 @@ const Contact = () => {
     
     // Add each field with label and value or placeholder with line breaks
     message += '*1. Name: ' + (formData.name || '___________________');
-    message += '*2. Email: ' + (formData.email || '___________________') ;
-    message += '*3. Phone: ' + (formData.phone || '___________________') ;
-    message += '*4. Subject: ' + (formData.subject || '___________________') ;
-    message += '*5. Message: ' + (formData.message || '_______________________________________________________');
+    message += '*2. Phone: ' + (formData.phone || '___________________') ;
+    message += '*3. Message: ' + (formData.message || '_______________________________________________________');
     
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
@@ -51,9 +47,7 @@ const Contact = () => {
     // Reset form
     setFormData({
       name: '',
-      email: '',
       phone: '',
-      subject: '',
       message: ''
     });
     
@@ -147,76 +141,35 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive-400 focus:border-transparent transition-colors duration-200"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive-400 focus:border-transparent transition-colors duration-200"
-                    placeholder="Email"
-                  />
-                </div>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive-400 focus:border-transparent transition-colors duration-200 mb-6"
+                  placeholder="Your full name"
+                />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive-400 focus:border-transparent transition-colors duration-200"
-                    placeholder="+91"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive-400 focus:border-transparent transition-colors duration-200"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="general-inquiry">General Inquiry</option>
-                    <option value="admission">Admission Information</option>
-                    <option value="visiting">Visiting Arrangements</option>
-                    <option value="services">Services Information</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive-400 focus:border-transparent transition-colors duration-200 mb-6"
+                  placeholder="+91"
+                />
               </div>
 
               <div>

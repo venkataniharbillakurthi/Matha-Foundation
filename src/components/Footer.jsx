@@ -1,5 +1,5 @@
 import { Phone, MapPin, Heart } from 'lucide-react';
-import banner from '../banner.jpg';
+import banner from '../logo.jpg';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -17,9 +17,7 @@ const Footer = () => {
                   className="h-16 w-auto object-contain"
                 />
               </div>
-              <p className="text-gray-300 leading-relaxed">
-                A trusted and compassionate haven for our cherished elderly residents, offering personalized care for over 12 years.
-              </p>
+              
             </div>
             
 

@@ -4,9 +4,7 @@ import { X, Send } from 'lucide-react';
 const EnquiryModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    subject: '',
     message: ''
   });
 
@@ -31,10 +29,8 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     
     // Add each field with label and value or placeholder with line breaks
     message += '*1. Name: ' + (formData.name || '___________________') ;
-    message += '*2. Email: ' + (formData.email || '___________________') ;
-    message += '*3. Phone: ' + (formData.phone || '___________________') ;
-    message += '*4. Subject: ' + (formData.subject || '___________________') ;
-    message += '*5. Message: ' + (formData.message || '_______________________________________________________');
+    message += '*2. Phone: ' + (formData.phone || '___________________') ;
+    message += '*3. Message: ' + (formData.message || '_______________________________________________________');
     
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
@@ -53,9 +49,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     // Reset form
     setFormData({
       name: '',
-      email: '',
       phone: '',
-      subject: '',
       message: ''
     });
     
@@ -84,15 +78,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
             className="w-full p-3 border border-gray-300 rounded-lg"
             required
           />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleInputChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
-            required
-          />
+
           <input
             type="tel"
             name="phone"
@@ -101,15 +87,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
             onChange={handleInputChange}
             className="w-full p-3 border border-gray-300 rounded-lg"
           />
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            value={formData.subject}
-            onChange={handleInputChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
-            required
-          />
+
           <textarea
             name="message"
             placeholder="Your Message"
